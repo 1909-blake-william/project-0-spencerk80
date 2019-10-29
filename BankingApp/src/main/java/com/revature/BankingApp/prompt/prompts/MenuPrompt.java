@@ -68,7 +68,7 @@ public class MenuPrompt implements Prompt {
 		
 		while(response < 1 || response > 7) {
 			
-			System.err.println("\n\nError: Invalid selection\n\n");
+			System.err.println("\nError: Invalid selection\n");
 			System.out.println("Please enter where you would like to go");
 			response = SafeParser.parseInt(scan.nextLine());
 			
@@ -180,20 +180,22 @@ public class MenuPrompt implements Prompt {
 				
 			} else if(numAccounts == 1) //If user has one
 				
-				if(user.getChecking() != null)
+				if(user.getChecking() != null) {
 					
+					System.out.println("--Checking--");
 					for(Transaction t : TransactionDoa.doa.getTransactions(user, user.getChecking().getAccType()))
 						
 						System.out.println(t.toString());
 					
-				else
+				} else {
 					
+					System.out.println("--Savings--");
 					for(Transaction t : TransactionDoa.doa.getTransactions(user, user.getSaving().getAccType()))
 						
 						System.out.println(t.toString());
 					
 				
-			else //user has neither
+				} else //user has neither
 				
 				System.out.println("You have no open accounts");
 			

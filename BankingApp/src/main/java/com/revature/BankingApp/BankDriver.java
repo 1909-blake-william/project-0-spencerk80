@@ -26,6 +26,7 @@ public class BankDriver {
 		while(!(p instanceof ShutdownPrompt))
 			
 			p = p.run();
+			
 		
 		System.out.println("\n\n--Shutting down--\n\n");
 

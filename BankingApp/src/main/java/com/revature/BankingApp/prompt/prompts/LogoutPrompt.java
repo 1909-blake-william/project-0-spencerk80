@@ -23,7 +23,7 @@ public class LogoutPrompt implements Prompt {
 		
 		while(!response.equalsIgnoreCase("yes") && !response.equalsIgnoreCase("no")) {
 			
-			System.err.println("\n\nError: Invalid response\n\n");
+			System.err.println("\nError: Invalid response\n");
 			System.out.println("Are you sure you want to logout?");
 			response = scan.nextLine();
 			

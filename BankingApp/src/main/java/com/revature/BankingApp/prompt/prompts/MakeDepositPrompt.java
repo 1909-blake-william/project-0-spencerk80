@@ -26,7 +26,7 @@ public class MakeDepositPrompt implements Prompt {
 			
 			if(user.getChecking() == null) {
 				
-				System.err.println("\n\nError: No such account\n\n");
+				System.err.println("\nError: No such account\n");
 				return Prompts.menu;
 				
 			} else
@@ -37,7 +37,7 @@ public class MakeDepositPrompt implements Prompt {
 			
 			if(user.getSaving() == null) {
 				
-				System.err.println("\n\nError: No such account\n\n");
+				System.err.println("\nError: No such account\n");
 				return Prompts.menu;
 				
 			} else
@@ -66,7 +66,7 @@ public class MakeDepositPrompt implements Prompt {
 		
 			if(amount < 0)
 				
-				System.err.println("\n\nError: Invalid entry\n\n");
+				System.err.println("\nError: Invalid entry\n");
 			
 		}
 		
@@ -85,7 +85,7 @@ public class MakeDepositPrompt implements Prompt {
 			System.out.println("Checking or savings?");
 			type = SafeParser.parseAccountType(scan.nextLine());
 			
-			if(type == null) System.err.println("\n\nError: Invalid selection\n\n");
+			if(type == null) System.err.println("\nError: Invalid selection\n");
 			
 		} while(type == null);
 

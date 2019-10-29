@@ -24,7 +24,7 @@ public class MakeWithdrawPrompt implements Prompt {
 				
 				if(user.getChecking() == null) {
 					
-					System.err.println("\n\nError: No such account\n\n");
+					System.err.println("\nError: No such account\n");
 					return Prompts.menu;
 					
 				}
@@ -33,7 +33,7 @@ public class MakeWithdrawPrompt implements Prompt {
 				
 			} catch (SavingAccountOverdraftException e1) {
 
-				System.err.println("\n\nError: Overdraft should be allowed on checking acocunt. See programmer\n\n");
+				System.err.println("\nError: Overdraft should be allowed on checking acocunt. See programmer\n");
 				
 			}
 		
@@ -43,7 +43,7 @@ public class MakeWithdrawPrompt implements Prompt {
 				
 				if(user.getSaving() == null) {
 					
-					System.err.println("\n\nError: No such account\n\n");
+					System.err.println("\nError: No such account\n");
 					return Prompts.menu;
 					
 				}
@@ -52,7 +52,7 @@ public class MakeWithdrawPrompt implements Prompt {
 				
 			} catch (SavingAccountOverdraftException e) {
 
-				System.err.println("\n\nInsufficient funds!\n\n");
+				System.err.println("\nInsufficient funds!\n");
 			
 			}
 		
@@ -78,7 +78,7 @@ public class MakeWithdrawPrompt implements Prompt {
 		
 			if(amount < 0)
 				
-				System.err.println("\n\nError: Invalid entry\n\n");
+				System.err.println("\nError: Invalid entry\n");
 			
 		}
 		
@@ -97,7 +97,7 @@ public class MakeWithdrawPrompt implements Prompt {
 			System.out.println("Checking or savings?");
 			type = SafeParser.parseAccountType(scan.nextLine());
 			
-			if(type == null) System.err.println("\n\nError: Invalid selection\n\n");
+			if(type == null) System.err.println("\nError: Invalid selection\n");
 			
 		} while(type == null);
 

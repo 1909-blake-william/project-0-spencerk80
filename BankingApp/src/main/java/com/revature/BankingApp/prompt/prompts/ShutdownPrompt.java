@@ -37,7 +37,7 @@ public class ShutdownPrompt implements Prompt {
 		
 		while(!response.equalsIgnoreCase("yes") && !response.equalsIgnoreCase("no")) {
 			
-			System.err.println("\n\nError: Response not recognized\n\n");
+			System.err.println("\nError: Response not recognized\n");
 			System.out.println("Do you want to shutdown the system?");
 			response = scan.nextLine();
 			

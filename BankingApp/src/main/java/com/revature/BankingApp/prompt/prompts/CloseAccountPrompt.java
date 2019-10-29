@@ -39,7 +39,7 @@ public class CloseAccountPrompt implements Prompt {
 			
 			if(user.getChecking() == null)
 				
-				System.err.println("\n\nNo such account exists\n\n");
+				System.err.println("\nNo such account exists\n");
 		
 			else
 				
@@ -49,7 +49,7 @@ public class CloseAccountPrompt implements Prompt {
 					
 				} catch(AccountHasBalanceException e) {
 					
-					System.err.println("\n\nCannot close account with a balance");
+					System.err.println("\nCannot close account with a balance");
 					
 				}
 		
@@ -57,7 +57,7 @@ public class CloseAccountPrompt implements Prompt {
 			
 			if(user.getSaving() == null)
 				
-				System.err.println("\n\nNo such account exists\n\n");
+				System.err.println("\nNo such account exists\n");
 		
 			else
 				
@@ -67,7 +67,7 @@ public class CloseAccountPrompt implements Prompt {
 					
 				} catch(AccountHasBalanceException e) {
 					
-					System.err.println("\n\nCannot close account with a balance\n\n");
+					System.err.println("\nCannot close account with a balance\n");
 					
 				}
 		
@@ -84,7 +84,7 @@ public class CloseAccountPrompt implements Prompt {
 			System.out.println("Checking or savings?");
 			type = SafeParser.parseAccountType(scan.nextLine());
 			
-			if(type == null) System.err.println("\n\nError: Invalid selection\n\n");
+			if(type == null) System.err.println("\nError: Invalid selection\n");
 			
 		} while(type == null);
 

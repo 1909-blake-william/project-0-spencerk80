@@ -21,6 +21,7 @@ import com.revature.BankingApp.util.Password;
 public class CreateUserPrompt implements Prompt {
 
 	private Scanner	scan	= new Scanner(System.in);
+	private String 	name;
 	
 	/**
 	 * Runs the prompt and goes to the login prompt
@@ -29,18 +30,17 @@ public class CreateUserPrompt implements Prompt {
 	public Prompt run() {
 	
 		User	user;
-		String	name,
-				password;
+		String	password;
 		
 		printWelcome();
 		
 		do {
-		
-			name = getUserName();
+			
+			if(this.name == null) this.name = getUserName();
 			
 			if(UserDoa.doa.userExists(name) || AdminDoa.doa.adminExists(name)) {
 				
-				System.err.println("\n\nError: User with that name already exists!\n\n");
+				System.err.println("\nError: User with that name already exists!\n");
 				name = null;
 				
 			}
@@ -59,8 +59,8 @@ public class CreateUserPrompt implements Prompt {
 	
 	private void printWelcome() {
 		
-		System.out.println("--Welcome to Revature Bank--");
-		System.out.println("\nRunning user set up\n");
+		System.out.println("\n--Welcome to Revature Bank--");
+		System.out.println("\nRunning user set up...\n");
 		
 	}
 	
@@ -124,6 +124,12 @@ public class CreateUserPrompt implements Prompt {
 			System.err.println("\n\n" + ioe.getMessage());
 			
 		}
+		
+	}
+	
+	public void passName(String name) {
+		
+		this.name = name;
 		
 	}
 

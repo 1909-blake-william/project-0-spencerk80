@@ -31,12 +31,17 @@ public class LoginPrompt implements Prompt {
 		User		user;
 		Admin		admin		= null;
 		
+		System.out.println("\n--Welcome to Revature Bank--");
+		
 		name = getName();
 		pswd = getPasswd();
 		
-		if(isNewUser(name))
+		if(isNewUser(name)) {
 			
+			Prompts.mkUser.passName(name);
 			return Prompts.mkUser;
+			
+		}
 		
 		if(AdminDoa.doa.adminExists(name)) {
 			
@@ -62,7 +67,7 @@ public class LoginPrompt implements Prompt {
 		
 		if(user == null || !user.getPassword().equals(pswd)) {
 			
-			System.err.println("\n\nInvalid login\n\n");
+			System.err.println("\nInvalid login\n");
 			return Prompts.login;
 			
 		}

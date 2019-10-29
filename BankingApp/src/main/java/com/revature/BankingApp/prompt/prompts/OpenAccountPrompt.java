@@ -61,11 +61,11 @@ public class OpenAccountPrompt implements Prompt {
 		
 		} catch(AccountAlreadyExistsException e) {
 			
-			System.err.println("\n\nError: Account already exists\n\n");
+			System.err.println("\nError: Account already exists\n");
 			
 		} catch(OpenWithNegBalException e) {
 			
-			System.err.println("\n\nError: Cannot open with a negative balance!\n\n");
+			System.err.println("\nError: Cannot open with a negative balance!\n");
 			
 		}
 		
@@ -82,7 +82,7 @@ public class OpenAccountPrompt implements Prompt {
 			System.out.println("Checking or savings?");
 			type = SafeParser.parseAccountType(scan.nextLine());
 			
-			if(type == null) System.err.println("\n\nError: Invalid selection\n\n");
+			if(type == null) System.err.println("\nError: Invalid selection\n");
 			
 		} while(type == null);
 

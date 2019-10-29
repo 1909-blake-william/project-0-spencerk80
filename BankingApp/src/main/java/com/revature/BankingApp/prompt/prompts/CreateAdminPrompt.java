@@ -40,7 +40,7 @@ public class CreateAdminPrompt implements Prompt {
 			
 			if(UserDoa.doa.userExists(name) || AdminDoa.doa.adminExists(name)) {
 				
-				System.err.println("\n\nError: User with that name already exists!\n\n");
+				System.err.println("\nError: User with that name already exists!\n");
 				name = null;
 				
 			}
@@ -119,7 +119,7 @@ public class CreateAdminPrompt implements Prompt {
 			
 		} catch(IOException ioe) {
 			
-			System.err.println("\n\nError: Could not update admin info to file");
+			System.err.println("\nError: Could not update admin info to file");
 			
 		}
 		

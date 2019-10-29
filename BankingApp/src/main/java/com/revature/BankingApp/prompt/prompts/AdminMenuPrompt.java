@@ -46,7 +46,7 @@ public class AdminMenuPrompt implements Prompt {
 		
 		while(response < 1 || response > 5) {
 			
-			System.err.println("\n\nError: Invalid selection\n\n");
+			System.err.println("\nError: Invalid selection\n");
 			System.out.println("Please enter where you would like to go");
 			response = SafeParser.parseInt(scan.nextLine());
 			

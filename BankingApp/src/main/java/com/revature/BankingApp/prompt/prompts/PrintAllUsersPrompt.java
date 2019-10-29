@@ -29,7 +29,7 @@ public class PrintAllUsersPrompt implements Prompt {
 			
 		} catch(IOException e) {
 			
-			System.err.println("\n\nError: Could not read file\n\n");
+			System.err.println("\nError: Could not read file\n");
 			return Prompts.adminMenu;
 			
 		}

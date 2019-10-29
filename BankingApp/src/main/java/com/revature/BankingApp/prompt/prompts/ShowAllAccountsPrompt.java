@@ -25,7 +25,7 @@ public class ShowAllAccountsPrompt implements Prompt {
 			
 		} catch(IOException e) {
 			
-			System.err.println("\n\nError: Could not read files\n\n");
+			System.err.println("\nError: Could not read files\n");
 			return Prompts.adminMenu;
 			
 		}
