@@ -38,7 +38,8 @@ public class TransactionDoaSql implements TransactionDoa {
 			ps = c.prepareStatement("SELECT * FROM transactions INNER JOIN accounts " +
 									"ON transactions.acc = accounts.id INNER JOIN users " +
 									"ON accounts.owner = users.id " +
-									"WHERE users.name = ? AND accounts.id = ?");
+									"WHERE users.name = ? AND accounts.id = ? " +
+									"ORDER BY t_stamp DESC");
 			ps.setString(1, user.getUserName());
 			ps.setInt(2, accID);
 			rs = ps.executeQuery();
