@@ -110,7 +110,7 @@ public class UserDoaSql implements UserDoa {
 		
 		try(Connection c = ConnectionUtil.getConnection()) {
 			
-			ps = c.prepareStatement("SELECT user.name FROM user");
+			ps = c.prepareStatement("SELECT users.name FROM users WHERE name != 'closed'");
 			rs = ps.executeQuery();
 			
 			while(rs.next())
